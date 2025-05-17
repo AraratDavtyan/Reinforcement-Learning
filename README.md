@@ -74,7 +74,7 @@ pip install -r requirements.txt  # if present
 ```
 4. Run the training or main file:
 ```bash
-python tic-tac-toe.py
+python tic_tac_toe.py
 ```
 ## Project Descriptions
 
