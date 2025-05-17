@@ -42,7 +42,7 @@ Each state's value is updated immediately using the most recent estimates.
  
 **Result:**
 
-![In-Place](generated_images/figure_4_1_in_place.png)
+<img src="generated_images/figure_4_1_in_place.png" width="400"/>
 
 ---
 
@@ -52,7 +52,7 @@ The value function is updated all at once using a copy of the previous iteration
 
  **Result:**
 
-![Out-of-Place](generated_images/figure_4_1_out_place.png)
+<img src="generated_images/figure_4_1_out_place.png" width="400"/>
 
 ---
 

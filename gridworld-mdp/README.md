@@ -43,7 +43,7 @@ The **state-value function** defines how beneficial it is for the agent to occup
 
  **Example Output:**
 
-![State-Value Function](generated_images/figure_3_2.png)
+<img src="generated_images/figure_3_2.png" width="400"/>
 
 ---
 
@@ -53,9 +53,9 @@ The **state-value function** defines how beneficial it is for the agent to occup
 
  **Example Outputs:**
 
-![Policy Iteration](generated_images/figure_3_5.png)
+<img src="generated_images/figure_3_5.png" width="400"/>
 
-![Optimal Policy](generated_images/figure_3_5_policy.png)
+<img src="generated_images/figure_3_5_policy.png" width="400"/>
 
 ---
 
