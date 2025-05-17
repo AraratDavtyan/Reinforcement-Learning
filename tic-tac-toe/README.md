@@ -1,57 +1,90 @@
-# Tic-Tac-Toe  
+# Reinforcement Learning in Tic-Tac-Toe
 
-This repository contains an implementation of Tic-Tac-Toe using Reinforcement Learning (RL). The goal of this project is to apply RL techniques to train an agent that can play optimally against human opponents or other AI agents.  
+This project implements **Reinforcement Learning agents** trained to play **Tic-Tac-Toe** using **state-value estimation** and **temporal-difference learning**. 
 
-The implementation explores state-value learning, policy optimization, and reward-based decision-making to improve the agent’s performance over time.  
-
----
-
-## Features  
-
-- Self-learning Agent – The agent learns optimal moves through reinforcement learning.  
-- Exploration vs. Exploitation – Balances exploration of new moves and exploitation of learned strategies.  
-- Customizable Training – Allows adjustment of learning parameters, reward functions, and exploration rates.  
-- Human vs. AI– Play against the trained agent.  
+The RL agent learns to play against itself, and can then compete with another RL agent or even a human.
 
 ---
 
-## Project Structure  
+## Project Structure
+```
 tic-tac-toe/
-│── src/
-│   ├── judge.py        
-│   ├── player.py 
-│   ├── policy_first.bin
-│   ├── policy_second.bin
-│   ├── state.py        
-│   ├── tic_tac_toe.py         
-│── README.md            
+│── src/ # Core components for game logic and RL agent
+│ ├── state.py # Game state and environment representation
+│ ├── player.py # RL and human player implementations
+│ ├── judge.py # Game controller to manage turns and evaluate outcome
+│ ├── tic_tac_toe.py # Training, evaluation, and play routines
+│ ├── policy_first.bin # Saved policy for player 1
+│ ├── policy_second.bin # Saved policy for player 2
+│── README.md # Project documentation
+```
+
 
 ---
 
-## Getting Started  
+## Overview of the System
 
-### Installation  
+### RL Approach
 
-1. Clone the repository:  
-     git clone https://github.com/AraratDavtyan/tic-tac-toe.git
-   cd tic-tac-toe
-   2. Install dependencies:  
-     pip install -r requirements.txt
-   3. Train the AI agent and play against the trained AI:  
-     python tic-tac-toe.py
-   
+The system uses the **TD(0)** method to estimate the value of each state:
+- Trains two RL agents using self-play.
+- Learns to predict the probability of winning for any board configuration.
+- Updates values using:
+```
+V(S_t) ← V(S_t) + α [V(S_{t+1}) − V(S_t)]
+```
+
+
+Only when greedy actions are taken.
+
+### Key Concepts Used
+
+- **State Hashing**: Every board configuration is uniquely hashed for fast lookup and value storage.
+- **ε-Greedy Strategy**: Balances exploration and exploitation during training.
+- **Temporal Difference (TD) Learning**: Updates values step-by-step without waiting for the final outcome.
+- **Self-Play**: Agents train by playing against each other with random starting positions.
+- **Policy Saving**: Trained policies are persisted and can be loaded later for evaluation or gameplay.
+
 ---
-## References  
 
-This implementation is inspired by concepts from:  
+## Features
 
-- *Reinforcement Learning: An Introduction* by Richard S. Sutton and Andrew G. Barto (Second Edition, MIT Press, 2018).  
-
-For more details on RL principles, visit: [Sutton & Barto's book](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf).  
+-  **Trainable Agents** using TD(0) learning
+-  **Autonomous Learning** through self-play
+-  **Play against RL agent** in a terminal-based game
+-  **Policy Persistence** for reloading trained agents
+-  **Human vs AI gameplay** with keyboard-based input
 
 ---
 
-## Libraries and Frameworks Used  
+## Example Outputs
 
-- Python – Core programming language for the project.  
-- NumPy – Efficient numerical operations for RL computations.
+### During Training
+```
+Epoch 5000, Player1 Win Rate: 0.53, Player2 Win Rate: 0.47
+Epoch 10000, Player1 Win Rate: 0.56, Player2 Win Rate: 0.44
+```
+
+
+### Human Gameplay
+```
+| 0 | 0 | 0 |
+| 0 | * | x |
+| x | * | * |
+RL player wins!
+```
+
+
+---
+
+
+## Extensions & Future Work
+- Incorporate Q-learning for action-value based learning
+
+- Extend to larger board sizes (e.g. 4x4 or 5x5)
+
+- Use function approximation for continuous board states
+
+- Add GUI or Web-based interface for gameplay
+
+---

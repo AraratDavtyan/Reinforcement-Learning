@@ -1,66 +1,134 @@
-# Reinforcement Learning Projects  
+# Reinforcement Learning Projects
 
-This repository contains multiple Reinforcement Learning (RL) projects, each focusing on different environments, techniques, and learning strategies. The goal is to experiment with RL concepts, build structured implementations, and enhance my understanding of agent training, reward optimization, and decision-making in dynamic environments.  
+This repository contains multiple Reinforcement Learning (RL) projects, each demonstrating different environments, algorithms, and learning techniques inspired by the textbook **Reinforcement Learning: An Introduction** by Richard S. Sutton and Andrew G. Barto (Second Edition, MIT Press, 2018).
 
-Many of the implementations are inspired by concepts from *Reinforcement Learning: An Introduction* by Richard S. Sutton and Andrew G. Barto (Second Edition, MIT Press, 2018).  
+These implementations emphasize building RL agents from scratch using foundational algorithms and are designed to deepen practical understanding of agent behavior, policy evaluation, and exploration strategies.
 
-This repository: [GitHub - AraratDavtyan/Reinforcement-Learning](https://github.com/AraratDavtyan/Reinforcement-Learning)  
-
----
-
-## Projects Overview  
-
-Each project is organized in its own folder with a dedicated README.md explaining its objectives, methodology, and key findings.  
-
-### Project Structure  
-reinforcement-learning-projects/
-│── project-1/
-│   ├── README.md
-│   ├── main.py
-│   ├── environment.py
-│   ├── requirements.txt
-│── project-2/
-│   ├── README.md
-│   ├── agent.py
-│   ├── train.py
-│   ├── environment.py
-│── ...
-│── README.md  # Main repository README
-  
+**Reference**:  
+_Reinforcement Learning: An Introduction_, Sutton & Barto (2018)  
+[Read Online (PDF)](https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf)
 
 ---
 
-## Getting Started  
+## Projects Overview
 
-To explore any of the RL projects:  
+Each project is organized in its own directory and includes a dedicated `README.md` describing its objectives, methodology, and findings. The code is kept modular and focused on clarity to ensure that learning mechanisms and agent-environment interactions are easy to follow and extend.
 
-1. Clone the repository:  
-     git clone https://github.com/AraratDavtyan/Reinforcement-Learning.git
-   cd Reinforcement-Learning
-   2. Navigate to a specific project folder:  
-     cd project-1
-   3. Install dependencies (each project has its own `requirements.txt`):  
-     pip install -r requirements.txt
-   4. Run the project:  
-     python main.py  # Or train.py depending on the project
-     
+## Project Structure
+```
+reinforcement-learning/
+│── tic-tac-toe/
+│── ten-armed-testbed/
+│── gridworld-dp/
+│── gridworld-mdp/
+│── gambler-problem/
+│── blackjack/
+│── infinite-variance/
+│── random-walk/
+│── windy-gridworld/
+│── cliff-walking/
+│── README.md
+```
+## Implemented Projects
+
+
+| Project | Core Focus | Techniques |
+|---------|------------|------------|
+| [tic-tac-toe](./tic-tac-toe/) | Value Function Approximation in Self-Play | TD(0), ε-greedy, State-Value Updates |
+| [ten-armed-testbed](./ten-armed-testbed/) | Action-Value Methods for Stationary Bandits | Sample-Average, Constant Step Size, ε-greedy, UCB, Gradient Bandit |
+| [gridworld-dp](./gridworld-dp/) | Policy Evaluation and Improvement | Iterative Policy Evaluation, Policy Iteration |
+| [gridworld-mdp](./gridworld-mdp/) | Solving MDPs with Known Models | Planning, Value Iteration |
+| [gambler-problem](./gambler-problem/) | Finite-Horizon Dynamic Programming | Value Iteration, Policy Evaluation |
+| [blackjack](./blackjack/) | Monte Carlo Prediction and Control | On-policy, Off-policy with Importance Sampling, Exploring Starts |
+| [infinite-variance](./infinite-variance/) | Stability in Off-Policy Evaluation | Importance Sampling, Variance Analysis |
+| [random-walk](./random-walk/) | Prediction in Markov Processes | Monte Carlo vs TD(0) |
+| [windy-gridworld](./windy-gridworld/) | Episodic Control in Stochastic Environments | SARSA, ε-greedy, Environment Shaping |
+| [cliff-walking](./cliff-walking/) | Control with Temporal-Difference Methods | SARSA, Q-Learning, Expected SARSA |
+
+Each project includes its own source code and, where applicable, notebooks and experiment results.
+
+
+Each folder contains:
+- A dedicated `README.md` with methodology and key results
+- Source code for training, evaluation, and visualization
+- Notebooks or plots where applicable
 
 ---
 
-## Projects Included  
+## Getting Started
 
-- Basic RL Implementations – Foundational concepts applied to simple environments.  
-- Agent Training – Experiments with different reward structures and learning policies.  
-- Custom Environments – Simulating unique scenarios for RL models.  
-- Evaluation and Optimization – Analyzing performance and tuning hyperparameters.  
+1. Clone the repository:
+```bash
+git clone https://github.com/AraratDavtyan/reinforcement-learning.git
+cd reinforcement-learning 
+```
+2. Navigate to any project:
 
-Each project's README.md provides details on its approach, challenges, and improvements.  
+```bash
+cd tic-tac-toe
+```
+3. Install dependencies (typically NumPy, Matplotlib, tqdm):
+
+```bash
+pip install -r requirements.txt  # if present
+```
+4. Run the training or main file:
+```bash
+python tic_tac_toe.py
+```
+## Project Descriptions
+
+- **tic-tac-toe/**  
+  TD(0) learning via self-play with state-value function updates. Includes human vs agent gameplay.
+
+- **ten-armed-testbed/**  
+  Exploration of action-value methods using ε-greedy, optimistic initialization, UCB, and gradient-based algorithms.
+
+- **gridworld-dp/**  
+  Classical policy evaluation and improvement in Gridworld using iterative Dynamic Programming methods.
+
+- **gridworld-mdp/**  
+  Gridworld with full MDP formulation solved through planning algorithms such as value and policy iteration.
+
+- **gambler-problem/**  
+  Value iteration to compute the optimal policy in a probabilistic betting environment with terminal rewards.
+
+- **blackjack/**  
+  Monte Carlo prediction and control with on-policy, off-policy, and exploring starts methods. Based on the Blackjack game.
+
+- **infinite-variance/**  
+  Off-policy evaluation showing instability due to high variance in importance sampling.
+
+- **random-walk/**  
+  A chain-based Markov process used to compare Monte Carlo and TD(0) prediction methods.
+
+- **windy-gridworld/**  
+  Episodic task with stochastic transitions solved using SARSA. Highlights exploration in structured environments.
+
+- **cliff-walking/**  
+  Gridworld-based episodic control problem. Compares SARSA, Expected SARSA, and Q-Learning strategies.
 
 ---
 
-## Libraries and Frameworks Used  
+## Libraries Used
 
-- Python – Core programming language for all projects.  
-- OpenAI Gym – Standard RL environment library.  
-- PyTorch / TensorFlow – Deep learning frameworks for training agents.  
-- NumPy & Pandas – Data processing and analysis tools.
+All projects are implemented in **Python 3.x**, relying only on widely-used libraries:
+
+- **NumPy** – Efficient numerical operations and array handling  
+- **Matplotlib** – Visualization of value functions, learning curves, and policies  
+- **tqdm** – Real-time progress bars for training and evaluation loops  
+
+---
+
+## Learning Focus
+
+This repository emphasizes:
+
+- Implementing core reinforcement learning algorithms from scratch, based on Sutton & Barto’s textbook  
+- Understanding the differences between prediction and control, on-policy and off-policy learning  
+- Experimenting with value-based methods including TD(0), Monte Carlo, and Dynamic Programming  
+- Exploring the impact of exploration strategies like ε-greedy, UCB, and optimism in action-value methods  
+- Analyzing convergence behavior, variance in returns, and stability in function approximation  
+- Comparing theoretical expectations with empirical results through simulation-based experiments  
+
+---
