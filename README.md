@@ -59,8 +59,8 @@ Each folder contains:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/AraratDavtyan/reinforcement-learning.git
-cd reinforcement-learning 
+git clone https://github.com/AraratDavtyan/Reinforcement-Learning.git
+cd Reinforcement-Learning 
 ```
 2. Navigate to any project:
 
@@ -74,7 +74,7 @@ pip install -r requirements.txt  # if present
 ```
 4. Run the training or main file:
 ```bash
-python tic_tac_toe.py
+python tic-tac-toe.py
 ```
 ## Project Descriptions
 
