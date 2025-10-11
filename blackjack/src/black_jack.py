@@ -61,10 +61,10 @@ for i in range(17, 22):
 def target_policy_player(usable_ace_player, player_sum, dealer_card):
     # region Summary
     """
-    Target policy of player
+    Talayer_sum: Sum of player's cards
+    :param drget policy of player
     :param usable_ace_player: Whether a player has usable ace
-    :param player_sum: Sum of player's cards
-    :param dealer_card: Dealer's showing card
+    :param pealer_card: Dealer's showing card
     :return: Action
     """
     # endregion Summary
